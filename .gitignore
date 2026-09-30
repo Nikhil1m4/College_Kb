@@ -1,2 +1,21 @@
+# Secrets
 .env
-.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Vercel output (public/ is the build artifact, not source)
+public/
+
+# OS
+.DS_Store
+Thumbs.db

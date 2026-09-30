@@ -1,0 +1,95 @@
+/* Minimal styles — no framework */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+section {
+  margin-top: 2rem;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 1.25rem;
+  background: #141820;
+}
+
+h2 {
+  font-size: 1rem;
+  font-family: monospace;
+  color: #7dd3fc;
+  margin-bottom: 0.75rem;
+}
+
+.json-block {
+  background: #0a0e16;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #86efac;
+  margin-top: 0.5rem;
+}
+
+.stream-output {
+  color: #fcd34d;
+}
+
+.status {
+  font-size: 0.9rem;
+}
+
+.loading {
+  color: #94a3b8;
+}
+
+.error {
+  color: #f87171;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1.25rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button[aria-busy="true"] {
+  background: #475569;
+}
