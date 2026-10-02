@@ -1,0 +1,17 @@
+[tool.pytest.ini_options]
+# Make the repo root importable so `from api.index import app` works
+# when pytest is invoked from the repo root (locally or in CI).
+pythonpath = ["."]
+testpaths = ["api/tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.vercel]
+# Tell Vercel where the FastAPI `app` variable lives when deploying
+# from the repo root (not from within the api/ directory).
+entrypoint = "api.index:app"
