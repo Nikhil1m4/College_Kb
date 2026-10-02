@@ -1,3 +1,8 @@
+[project]
+name = "college-kb"
+version = "0.1.0"
+requires-python = ">=3.9"
+
 [tool.pytest.ini_options]
 # Make the repo root importable so `from api.index import app` works
 # when pytest is invoked from the repo root (locally or in CI).
