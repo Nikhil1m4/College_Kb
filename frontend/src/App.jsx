@@ -1,41 +1,35 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
-interface HealthData {
-  status: string
-  env: string
-}
-
-type FetchState = 'idle' | 'loading' | 'success' | 'error'
-
 export default function App() {
-  const [fetchState, setFetchState] = useState<FetchState>('loading')
-  const [health, setHealth] = useState<HealthData | null>(null)
-  const [errorMsg, setErrorMsg] = useState<string>('')
+  // --- Health fetch state ---
+  const [fetchState, setFetchState] = useState('loading') // 'loading' | 'success' | 'error'
+  const [health, setHealth] = useState(null)
+  const [errorMsg, setErrorMsg] = useState('')
 
-  // Streaming state
-  const [streamChunks, setStreamChunks] = useState<string[]>([])
+  // --- Streaming state ---
+  const [streamChunks, setStreamChunks] = useState([])
   const [streaming, setStreaming] = useState(false)
-  const abortRef = useRef<AbortController | null>(null)
+  const abortRef = useRef(null)
 
   // Fetch health on mount
   useEffect(() => {
     fetch('/api/health')
-      .then(async (res) => {
+      .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json() as Promise<HealthData>
+        return res.json()
       })
       .then((data) => {
         setHealth(data)
         setFetchState('success')
       })
-      .catch((err: unknown) => {
+      .catch((err) => {
         setErrorMsg(err instanceof Error ? err.message : String(err))
         setFetchState('error')
       })
   }, [])
 
-  const handleStream = async () => {
+  async function handleStream() {
     if (streaming) {
       abortRef.current?.abort()
       return
@@ -59,8 +53,8 @@ export default function App() {
         const text = decoder.decode(value, { stream: true })
         setStreamChunks((prev) => [...prev, text])
       }
-    } catch (err: unknown) {
-      if ((err as { name?: string }).name !== 'AbortError') {
+    } catch (err) {
+      if (err?.name !== 'AbortError') {
         setStreamChunks((prev) => [...prev, `[error: ${String(err)}]`])
       }
     } finally {
@@ -93,7 +87,6 @@ export default function App() {
         <button
           id="stream-btn"
           onClick={() => void handleStream()}
-          disabled={false}
           aria-busy={streaming}
         >
           {streaming ? 'Stop streaming' : 'Test streaming'}

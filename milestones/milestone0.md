@@ -27,17 +27,17 @@ All checks passed!
 ```
 vite v8.3.1 building client environment for production...
 ✓ 17 modules transformed.
-../public/index.html           0.57 kB │ gzip:  0.35 kB
-../public/assets/index-*.css   1.03 kB │ gzip:  0.51 kB
-../public/assets/index-*.js  221.37 kB │ gzip: 69.32 kB
-✓ built in 552ms
+dist/index.html                   0.57 kB │ gzip:  0.35 kB
+dist/assets/index-CVODXPWq.css    1.03 kB │ gzip:  0.51 kB
+dist/assets/index-Cmr9SYm3.js   221.36 kB │ gzip: 69.31 kB
+✓ built in 740ms
 ```
 
 ### 4. `npm run lint` (oxlint) — PASSED
 
 ```
 Found 0 warnings and 0 errors.
-Finished in 114ms on 3 files with 116 rules using 8 threads.
+Finished in 165ms on 3 files with 104 rules using 8 threads.
 ```
 
 ### 5. Local servers verified
@@ -74,14 +74,14 @@ College_Kb/
 │   └── tests/
 │       ├── __init__.py
 │       └── test_health.py
-└── frontend/             Vite react-ts
+└── frontend/             Vite react (Plain JS)
     ├── index.html
     ├── package.json
-    ├── vite.config.ts    proxy /api → 8000, build outDir → ../public
+    ├── vite.config.js    proxy /api → 8000
     └── src/
-        ├── main.tsx
+        ├── main.jsx
         ├── index.css
-        ├── App.tsx       health fetch + streaming button
+        ├── App.jsx       health fetch + streaming button
         └── App.css
 ```
 

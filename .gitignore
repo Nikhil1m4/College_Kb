@@ -12,10 +12,20 @@ __pycache__/
 # Node
 node_modules/
 frontend/dist/
+frontend/.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Vercel output (public/ is the build artifact, not source)
-public/
+# Auto-generated or redundant build output
+/public/
 
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
 # OS
 .DS_Store
 Thumbs.db
