@@ -29,3 +29,9 @@ pnpm-debug.log*
 # OS
 .DS_Store
 Thumbs.db
+
+# Documentation (Kept local, not pushed to GitHub)
+ARCHITECTURE.md
+architecture.md
+DECISIONS.md
+milestones/
