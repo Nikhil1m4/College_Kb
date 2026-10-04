@@ -19,3 +19,4 @@ def test_health_status_ok() -> None:
     data = response.json()
     assert data["status"] == "ok"
     assert "env" in data
+    assert "region" in data

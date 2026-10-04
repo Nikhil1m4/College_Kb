@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     """Application configuration loaded from environment variables."""
 
     app_env: str = "dev"
+    supabase_url: str
+    supabase_service_role_key: str
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 

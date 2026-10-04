@@ -55,6 +55,17 @@ See the Vercel checklist in `DECISIONS.md` and follow the steps in:
 
 ---
 
+## Auth Setup (Milestone 1)
+
+To run authentication locally:
+1. Create a project in [Supabase](https://supabase.com).
+2. Get your **Project URL** and **anon key** from Settings > API. Place these in `.env` as `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
+3. Get your **service_role key** from the same page and place it in `.env` as `SUPABASE_SERVICE_ROLE_KEY`. *Never share this.*
+4. Disable "Confirm email" in Supabase Auth Settings for smoother local development.
+5. Run the migration script located in `db/migrations/001_profiles.sql` in your Supabase SQL Editor.
+
+---
+
 ## Previews
 
 <img width="903" height="637" alt="image" src="https://github.com/user-attachments/assets/575eaf33-cd75-49c1-a85d-8ce7f97e97ed" />
