@@ -6,7 +6,7 @@ RAG web app — **Milestone 0**: empty skeleton that builds, tests, and deploys.
 
 ## Local development
 
-### Backend
+### Backend 
 
 ```bash
 # From repo root
